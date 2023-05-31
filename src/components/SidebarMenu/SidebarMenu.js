@@ -26,7 +26,7 @@ function SidebarMenu() {
                     <span className="ms-3 d-none d-sm-inline ">Dashboard</span>
                   </a>
                 </li>
-                <li className="nav-item text-white fs-4 my-1 py-2 py-sm-0">
+                {/* <li className="nav-item text-white fs-4 my-1 py-2 py-sm-0">
                   <Link
                     as={Link} to="/products"
                     
@@ -36,17 +36,16 @@ function SidebarMenu() {
                     <i className="bi bi-house"></i>
                     <span className="ms-3 d-none d-sm-inline ">Home</span>
                   </Link>
-                </li>
-                <li className="nav-item text-white fs-4 my-1 py-2 py-sm-0">
-                  <Link
-                    as={Link} to="/products"
-                    
+                </li> */}
+             <li className="nav-item text-white fs-4 my-1 py-2 py-sm-0">
+                  <a
+                    href="/devis"
                     className="nav-link text-white fs-5"
                     aria-current="page"
                   >
-                    <i className="bi bi-house"></i>
-                    <span className="ms-3 d-none d-sm-inline ">Home</span>
-                  </Link>
+                    <i className="bi bi-grid"></i>
+                    <span className="ms-3 d-none d-sm-inline">Devis</span>
+                  </a>
                 </li>
                 
                 <li className="nav-item text-white fs-4 my-1 py-2 py-sm-0">
@@ -57,6 +56,16 @@ function SidebarMenu() {
                   >
                     <i className="bi bi-grid"></i>
                     <span className="ms-3 d-none d-sm-inline">Products</span>
+                  </a>
+                </li>
+                <li className="nav-item text-white fs-4 my-1 py-2 py-sm-0">
+                  <a
+                    href="/categories"
+                    className="nav-link text-white fs-5"
+                    aria-current="page"
+                  >
+                    <i className="bi bi-grid"></i>
+                    <span className="ms-3 d-none d-sm-inline">Categories</span>
                   </a>
                 </li>
                 <li className="nav-item text-white fs-4 my-1  py-2 py-sm-0">
