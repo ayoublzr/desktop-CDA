@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import Products from "./pages/products/Products";
-import { Link } from "react-router-dom";
 import SidebarMenu from "./components/SidebarMenu/SidebarMenu";
-import Home from "./pages/Home/Home";
+import Devis from "./pages/Devis/Devis";
+import Categories from "./pages/Categories/Categories";
 
 function App() {
   return (
@@ -11,6 +11,8 @@ function App() {
       <SidebarMenu/>
       <Routes>
         <Route path="/products" element={<Products />} />
+        <Route path="/devis" element={<Devis />} />
+        <Route path="/categories" element={<Categories />} />
         {/* <Route path="/" element={<Home />} /> */}
       </Routes>
     </div>
