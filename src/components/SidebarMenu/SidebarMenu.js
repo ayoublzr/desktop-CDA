@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/js/dist/dropdown";
 import "./SidebarMenu.css";
-import { Link } from "react-router-dom";
+
 
 function SidebarMenu() {
   return (
@@ -12,7 +12,7 @@ function SidebarMenu() {
           <div className="w-15 bg-dark col-auto col-md-2 min-vh-100 d-flex justify-content-between flex-column">
             <div>
               <a className="text-decoration-none text-white d-none d-sm-inline d-flex align-itemcenter ms-3 mt-2">
-                <span className="ms-1 fs-4 d-none d-sm-inline">Brand</span>
+                <span className="ms-1 fs-4 d-none d-sm-inline text-warning fs-1 fw-bold">SLQ</span>
               </a>
               <hr className="text-secondary d-none d-sm-inline" />
               <ul className="nav nav-pills flex-column mt-3 mt-sm-0 ">
@@ -26,17 +26,7 @@ function SidebarMenu() {
                     <span className="ms-3 d-none d-sm-inline ">Dashboard</span>
                   </a>
                 </li>
-                {/* <li className="nav-item text-white fs-4 my-1 py-2 py-sm-0">
-                  <Link
-                    as={Link} to="/products"
-                    
-                    className="nav-link text-white fs-5"
-                    aria-current="page"
-                  >
-                    <i className="bi bi-house"></i>
-                    <span className="ms-3 d-none d-sm-inline ">Home</span>
-                  </Link>
-                </li> */}
+              
              <li className="nav-item text-white fs-4 my-1 py-2 py-sm-0">
                   <a
                     href="/devis"
@@ -55,7 +45,7 @@ function SidebarMenu() {
                     aria-current="page"
                   >
                     <i className="bi bi-grid"></i>
-                    <span className="ms-3 d-none d-sm-inline">Products</span>
+                    <span className="ms-3 d-none d-sm-inline">Produits</span>
                   </a>
                 </li>
                 <li className="nav-item text-white fs-4 my-1 py-2 py-sm-0">
@@ -70,12 +60,12 @@ function SidebarMenu() {
                 </li>
                 <li className="nav-item text-white fs-4 my-1  py-2 py-sm-0">
                   <a
-                    href="#"
+                    href="/utilisateurs"
                     className="nav-link text-white fs-5"
                     aria-current="page"
                   >
                     <i className="bi bi-people"></i>
-                    <span className="ms-3 d-none d-sm-inline ">Devis</span>
+                    <span className="ms-3 d-none d-sm-inline ">Utilisateurs</span>
                   </a>
                 </li>
               </ul>
