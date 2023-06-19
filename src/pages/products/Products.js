@@ -5,9 +5,9 @@ import PopUp from "../../components/Pop-up/PopUp";
 
 function Products() {
   const [products, setProducts] = useState([]);
-  
+
   const [selectedProductId, setSelectedProductId] = useState(null);
-  // const [selectedProductData, setSelectedProductData] = useState([]);
+  
 
   useEffect(() => {
     fetchProducts();
@@ -17,20 +17,15 @@ function Products() {
     axios
       .get("http://localhost:3003/api/products")
       .then((res) => {
-        
         setProducts(res.data);
       })
       .catch((err) => console.log(err));
   };
   const handleEditProduct = (productId) => {
     setSelectedProductId(productId);
-    
-  }
-
+  };
 
   const handleDeleteProduct = (productId) => {
-    
-    
     axios
       .delete(`http://localhost:3003/api/deleteproduct/${productId}`)
       .then((response) => {
@@ -63,18 +58,22 @@ function Products() {
               <td>{product.description}</td>
               <td>{product.image}</td>
               <td>{product.Categorie.name}</td>
-              <td>
-               
-
-              <PopUp mode="edit"  onClick={() => handleEditProduct(product.id)} productId={product.id} />
-                
+              <td >
+                <PopUp
+                  mode="edit"
+                  onClick={() => handleEditProduct(product.id)}
+                  productId={product.id}
+                  style={{ width: "100px" }} 
+                >
+                  Modifier
+                </PopUp>
 
                 <button
-                  className="btn btn-danger btn-sm"
+                  className="btn btn-danger btn-sm py-2 px-1"
                   onClick={() => {
                     handleDeleteProduct(product.id);
-                    
                   }}
+                  style={{ width: "172px" }} 
                 >
                   Supprimer
                 </button>
