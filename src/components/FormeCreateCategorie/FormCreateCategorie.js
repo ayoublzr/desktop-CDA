@@ -1,18 +1,18 @@
-import React, { useState} from "react"
-import axios from "axios"
+import React, { useState } from "react";
+import axios from "axios";
 
 function FormCreateCategorie(props) {
-  const [name, setName] = useState("")
+  const [name, setName] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault(); 
-    const data = { name: name }
+    e.preventDefault();
+    const data = { name: name };
     axios
-      .post("http://localhost:3003/api/addcategorie", data) 
+      .post("http://localhost:3003/api/addcategorie", data)
       .then((response) => {
-        console.log(response.data)
-        setName("")
-        props.toggleModal()
+        console.log(response.data);
+        setName("");
+        props.toggleModal();
       })
       .catch((err) => {
         console.error("Erreur lors de la création de la catégorie :", err);

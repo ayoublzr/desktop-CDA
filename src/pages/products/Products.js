@@ -7,7 +7,6 @@ function Products() {
   const [products, setProducts] = useState([]);
 
   const [selectedProductId, setSelectedProductId] = useState(null);
-  
 
   useEffect(() => {
     fetchProducts();
@@ -58,12 +57,12 @@ function Products() {
               <td>{product.description}</td>
               <td>{product.image}</td>
               <td>{product.Categorie.name}</td>
-              <td >
+              <td>
                 <PopUp
                   mode="edit"
                   onClick={() => handleEditProduct(product.id)}
                   productId={product.id}
-                  style={{ width: "100px" }} 
+                  style={{ width: "100px" }}
                 >
                   Modifier
                 </PopUp>
@@ -73,7 +72,7 @@ function Products() {
                   onClick={() => {
                     handleDeleteProduct(product.id);
                   }}
-                  style={{ width: "172px" }} 
+                  style={{ width: "172px" }}
                 >
                   Supprimer
                 </button>

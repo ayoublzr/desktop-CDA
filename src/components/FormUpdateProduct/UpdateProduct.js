@@ -68,7 +68,9 @@ const UpdateProduct = (props) => {
               value={categorieId}
               onChange={(e) => setCategorieId(e.target.value)}
             >
-              <option value="">--Choisir la catégorie correspondant au produit--</option>
+              <option value="">
+                --Choisir la catégorie correspondant au produit--
+              </option>
               <option value="1">interieur</option>
               <option value="2">exterieur</option>
             </select>
@@ -93,7 +95,7 @@ const UpdateProduct = (props) => {
           </div>
           <div className="button-group">
             <button type="submit" className="btn btn-primary">
-              Save
+              Modifier
             </button>
           </div>
         </form>
