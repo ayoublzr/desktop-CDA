@@ -18,14 +18,15 @@ function Categories() {
       });
   }, []);
   const handleDelete = (categorieId) => {
-    axios.delete(`http://localhost:3003/api/deletecategorie/${categorieId}`)
-    .then(response=>{
+    axios
+      .delete(`http://localhost:3003/api/deletecategorie/${categorieId}`)
+      .then((response) => {
         console.log(response);
-    })
-    .catch(error => {
+      })
+      .catch((error) => {
         console.log(error);
       });
-  }
+  };
 
   return (
     <div>
@@ -55,7 +56,7 @@ function Categories() {
           ))}
         </tbody>
       </table>
-      <PopUp  categoryMode="createCategory" />
+      <PopUp categoryMode="createCategory" />
     </div>
   );
 }

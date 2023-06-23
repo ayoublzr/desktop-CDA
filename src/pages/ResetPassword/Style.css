@@ -1,0 +1,11 @@
+.formResetPassword{
+    width: 35%;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    margin: auto ; 
+    margin-top: 9rem;
+}
+.success-message{
+    color:green;
+}
