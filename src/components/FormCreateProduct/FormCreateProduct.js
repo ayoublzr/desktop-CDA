@@ -6,6 +6,8 @@ const FormCreateProduct = (props) => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
   const [categorie, setCategorie] = useState("");
+  const [video, setVideo] = useState("");
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,6 +18,9 @@ const FormCreateProduct = (props) => {
     formData.append("image", image);
     formData.append("categorie", categorie);
 
+    formData.append("video", video);
+
+
     axios
       .post("http://localhost:3003/api/addproduct", formData)
       .then((response) => {
@@ -24,11 +29,16 @@ const FormCreateProduct = (props) => {
       .catch((error) => {
         console.error("Erreur lors de la creation du produit :", error);
       });
+
+      
     setName("");
     setDescription("");
     setImage("");
+    setVideo("");
     props.toggleModal();
   };
+
+
   return (
     <form onSubmit={handleSubmit} className="m-3">
       <label>
@@ -40,8 +50,13 @@ const FormCreateProduct = (props) => {
           onChange={(e) => setName(e.target.value)}
         />
       </label>
-      <div className="mb-3 ">
-        <label for="pet-select">Categorie :</label>
+
+      <div className="mb-3">
+        <label htmlFor="pet-select">Categorie :</label>
+
+     
+        
+
 
         <select
           className="form-select"
@@ -51,13 +66,17 @@ const FormCreateProduct = (props) => {
           onChange={(e) => setCategorie(e.target.value)}
         >
           <option value="">
-            --Choisir le categorie correspond au produit--
+
+            --Choisir la catégorie correspondant au produit--
+
           </option>
           <option value="exterieur">exterieur</option>
           <option value="interieur">interieur</option>
         </select>
       </div>
-      <div className="mb-4 ">
+
+      <div className="mb-4">
+
         <label className="form-label">
           Description :
           <textarea
@@ -67,19 +86,27 @@ const FormCreateProduct = (props) => {
           ></textarea>
         </label>
       </div>
-      <div class="mb-3">
-        <label for="formFile" class="form-label">
+      <div className="mb-3">
+        <label htmlFor="formFile" className="form-label">
           Choisir une image
         </label>
         <input
-          class="form-control"
+          className="form-control"
           type="file"
           id="formFile"
           name="image"
           onChange={(e) => setImage(e.target.files[0])}
         />
       </div>
-
+      <label className="form-label">
+        URL YouTube :
+        <input
+          className="form-control"
+          type="text"
+          value={video}
+          onChange={(e) => setVideo(e.target.value)}
+        />
+      </label>
       <div className="button-group">
         <button type="submit" className="btn btn-primary">
           Créer
