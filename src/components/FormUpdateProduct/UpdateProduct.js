@@ -8,12 +8,14 @@ const UpdateProduct = (props) => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
   const [categorieId, setCategorieId] = useState("");
+  const [youtubeURL, setYoutubeURL] = useState("");
 
   useEffect(() => {
     if (productData) {
       setName(productData.name);
       setDescription(productData.description);
       setCategorieId(productData.CategorieId);
+      setYoutubeURL(productData.youtubeURL);
     }
   }, [productData]);
 
@@ -25,6 +27,7 @@ const UpdateProduct = (props) => {
     formData.append("description", description);
     formData.append("image", image);
     formData.append("CategorieId", categorieId);
+    formData.append("youtubeURL", youtubeURL);
 
     axios
       .patch(
@@ -42,6 +45,7 @@ const UpdateProduct = (props) => {
     setName("");
     setDescription("");
     setImage("");
+    setYoutubeURL("");
     toggleModal();
   };
 
@@ -81,6 +85,15 @@ const UpdateProduct = (props) => {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             ></textarea>
+          </label>
+          <label className="form-label">
+            URL YouTube :
+            <input
+              className="form-control"
+              type="text"
+              value={youtubeURL}
+              onChange={(e) => setYoutubeURL(e.target.value)}
+            />
           </label>
           <div className="mb-3">
             <label htmlFor="formFile" className="form-label">
