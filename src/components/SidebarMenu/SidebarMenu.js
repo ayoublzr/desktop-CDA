@@ -4,6 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/js/dist/dropdown";
 import "./SidebarMenu.css";
 import axios from "axios";
+
 import { useNavigate } from "react-router-dom";
 function SidebarMenu() {
   const navigate = useNavigate();
@@ -12,6 +13,9 @@ function SidebarMenu() {
   const handleLogout = () => {
     const token = localStorage.getItem("token");
   
+
+
+
     if (token) {
       axios
         .get("http://localhost:3003/api/logout", {
@@ -21,21 +25,25 @@ function SidebarMenu() {
         })
         .then((res) => {
           if (res.data.status === "Success") {
+
             // La déconnexion a réussi, alors seulement à ce stade vous pouvez supprimer l'élément token
             localStorage.removeItem("token");
             navigate("/")
+
           } else {
             alert("Erreur lors de la déconnexion");
           }
         })
         .catch((err) => {
+
+
           alert("Erreur lors de la déconnexion");
         });
     } else {
       alert("Erreur lors de la déconnexion 1");
     }
   };
-  
+
   return (
    
       

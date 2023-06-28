@@ -8,6 +8,7 @@ const FormCreateProduct = (props) => {
   const [categorie, setCategorie] = useState("");
   const [video, setVideo] = useState("");
 
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -16,7 +17,9 @@ const FormCreateProduct = (props) => {
     formData.append("description", description);
     formData.append("image", image);
     formData.append("categorie", categorie);
+
     formData.append("video", video);
+
 
     axios
       .post("http://localhost:3003/api/addproduct", formData)
@@ -26,6 +29,7 @@ const FormCreateProduct = (props) => {
       .catch((error) => {
         console.error("Erreur lors de la creation du produit :", error);
       });
+
       
     setName("");
     setDescription("");
@@ -33,6 +37,7 @@ const FormCreateProduct = (props) => {
     setVideo("");
     props.toggleModal();
   };
+
 
   return (
     <form onSubmit={handleSubmit} className="m-3">
@@ -45,8 +50,13 @@ const FormCreateProduct = (props) => {
           onChange={(e) => setName(e.target.value)}
         />
       </label>
+
       <div className="mb-3">
         <label htmlFor="pet-select">Categorie :</label>
+
+     
+        
+
 
         <select
           className="form-select"
@@ -56,13 +66,17 @@ const FormCreateProduct = (props) => {
           onChange={(e) => setCategorie(e.target.value)}
         >
           <option value="">
+
             --Choisir la catégorie correspondant au produit--
+
           </option>
           <option value="exterieur">exterieur</option>
           <option value="interieur">interieur</option>
         </select>
       </div>
+
       <div className="mb-4">
+
         <label className="form-label">
           Description :
           <textarea
